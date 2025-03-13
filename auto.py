@@ -250,6 +250,8 @@ if __name__ == "__main__":
                 print(f"\n미리 정의된 {len(major_positions)}개의 주요 위치를 사용합니다.")
                 minor_positions = PREDEFINED_MINOR_POSITIONS
                 print(f"\n미리 정의된 {len(minor_positions)}개의 보조 위치를 사용합니다.")
+
+                time.sleep(3)
             else:
                 major_positions = get_mouse_positions("주요(큰 범위)")
                 minor_positions = get_mouse_positions("보조(작은 범위)")

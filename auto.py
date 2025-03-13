@@ -8,7 +8,7 @@ pyautogui.FAILSAFE = True
 
 
 # 새로운 위치 목록 적용
-PREDEFINED_POSITIONS = [
+PREDEFINED_MAJOR_POSITIONS = [
     pyautogui.Point(x=1029, y=163),
     pyautogui.Point(x=1030, y=175),
     pyautogui.Point(x=1027, y=188),
@@ -60,6 +60,13 @@ PREDEFINED_POSITIONS = [
     pyautogui.Point(x=1032, y=758),
     pyautogui.Point(x=1031, y=771),
     pyautogui.Point(x=1005, y=1027)
+]
+
+PREDEFINED_MINOR_POSITIONS=[
+    pyautogui.Point(x=1039, y=77),
+    pyautogui.Point(x=999, y=187),
+    pyautogui.Point(x=1015, y=191),
+    pyautogui.Point(x=1022, y=12)
 ]
 
 def get_file_count(directory):
@@ -239,9 +246,10 @@ if __name__ == "__main__":
             use_predefined = input("미리 정의된 위치를 사용하시겠습니까? (y/n): ").lower().strip()
             
             if use_predefined == 'y':
-                major_positions = PREDEFINED_POSITIONS
+                major_positions = PREDEFINED_MAJOR_POSITIONS
                 print(f"\n미리 정의된 {len(major_positions)}개의 주요 위치를 사용합니다.")
-                minor_positions = get_mouse_positions("보조(작은 범위)")
+                minor_positions = PREDEFINED_MINOR_POSITIONS
+                print(f"\n미리 정의된 {len(minor_positions)}개의 보조 위치를 사용합니다.")
             else:
                 major_positions = get_mouse_positions("주요(큰 범위)")
                 minor_positions = get_mouse_positions("보조(작은 범위)")
